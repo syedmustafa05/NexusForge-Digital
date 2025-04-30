@@ -1,0 +1,354 @@
+/* style.css */
+
+/* --- Color Palette Variables --- */
+:root {
+    --primary-blue: #3498db;    /* Trust, Professionalism */
+    --secondary-teal: #1abc9c;  /* Growth, Innovation */
+    --text-dark: #333;          /* Readability */
+    --bg-light: #ecf0f1;        /* Clean Background */
+    --white: #fff;              /* Clarity */
+    --accent-orange: #e67e22;   /* Call to Action */
+    --accent-orange-dark: #d35400; /* Accent Hover */
+    --gray-border: #bdc3c7;     /* Subtle Borders */
+}
+
+/* --- General Body Styling --- */
+body {
+    font-family: 'Arial', sans-serif; /* Using a common sans-serif font */
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light); /* Light gray background */
+    color: var(--text-dark); /* Dark gray text for readability */
+    line-height: 1.6; /* Improved line spacing */
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-blue); /* Headings in primary blue */
+    margin-bottom: 15px;
+}
+
+/* Adjust h2 margin bottom for sections as per HTML */
+.text-center.mb-5 {
+    margin-bottom: 3rem !important; /* Keep Bootstrap's mb-5 spacing */
+}
+
+
+a {
+    color: var(--secondary-teal); /* Links in secondary teal */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+a:hover {
+    color: var(--primary-blue); /* Change link color on hover */
+    text-decoration: underline;
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    background-color: var(--primary-blue); /* Navbar background in primary blue */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: var(--white) !important; /* Brand text in white */
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: var(--white) !important; /* Nav links in white */
+    margin-left: 15px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--secondary-teal) !important; /* Nav links change to teal on hover */
+}
+
+/* Bootstrap toggler icon color */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); /* Subtle white border */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* White toggler icon */
+}
+
+
+/* --- Hero Section Styling --- */
+.hero {
+    background: linear-gradient(rgba(52, 152, 219, 0.8), rgba(26, 188, 156, 0.8)), url('https://via.placeholder.com/1500x800/3498db/ffffff?text=Hero+Background') no-repeat center center/cover; /* Blue/Teal gradient overlay on a placeholder image */
+    color: var(--white); /* White text for contrast */
+    text-align: center;
+    padding: 80px 20px; /* Increased padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Minimum height for the hero section */
+}
+
+.hero-content h1 {
+    color: var(--white); /* Hero heading in white */
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Style for the Bootstrap primary button in the hero section */
+.hero .btn-primary {
+    background-color: var(--accent-orange); /* Accent orange button */
+    border-color: var(--accent-orange);
+    padding: 12px 25px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+    background-color: var(--accent-orange-dark); /* Darker orange on hover */
+    border-color: var(--accent-orange-dark);
+}
+
+
+/* --- Section Styling --- */
+section {
+    padding: 60px 0; /* Consistent vertical padding for sections */
+}
+
+section:nth-child(odd) {
+    background-color: var(--bg-light); /* Alternate section background */
+}
+
+section:nth-child(even) {
+    background-color: var(--white); /* Alternate section background */
+}
+
+.container {
+    max-width: 1200px; /* Max width for content container */
+    margin: 0 auto;
+    padding: 0 15px; /* Add padding for smaller screens */
+}
+
+/* --- Services Section Styling --- */
+.services .service-card {
+    background-color: var(--white); /* White background for service cards */
+    border: 1px solid var(--gray-border); /* Subtle gray border */
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px; /* Space between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+    height: 100%; /* Ensure cards have equal height */
+}
+
+.services .service-card:hover {
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* More prominent shadow on hover */
+}
+
+.services .service-card h3 {
+    color: var(--primary-blue); /* Service card headings in primary blue */
+    margin-bottom: 15px;
+}
+
+.services .service-card p {
+    color: var(--text-dark); /* Service card text in dark gray */
+}
+
+
+/* --- Portfolio Section Styling --- */
+.portfolio .portfolio-item {
+    position: relative;
+    overflow: hidden; /* Hide overflowing overlay */
+    border-radius: 8px;
+    margin-bottom: 30px; /* Space between portfolio items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.portfolio .portfolio-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease; /* Smooth image scale transition */
+}
+
+.portfolio .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(52, 152, 219, 0.8); /* Primary blue overlay with transparency */
+    color: var(--white); /* White text on overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio .portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.portfolio .portfolio-item:hover img {
+    transform: scale(1.1); /* Slightly scale image on hover */
+}
+
+.portfolio-overlay h3 {
+    color: var(--white); /* Overlay heading in white */
+    margin-bottom: 10px;
+}
+
+.portfolio-overlay p {
+    color: var(--white); /* Overlay text in white */
+    font-size: 0.9em;
+}
+
+
+/* --- About Section Styling --- */
+.about .story-card,
+.about .values-card {
+    background-color: var(--white); /* White background for about cards */
+    border: 1px solid var(--gray-border); /* Subtle gray border */
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px; /* Space between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    height: 100%; /* Ensure cards have equal height */
+}
+
+.about .story-card h2,
+.about .values-card h2 {
+    color: var(--primary-blue); /* About card headings in primary blue */
+}
+
+.about .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid for values */
+    gap: 20px; /* Gap between value items */
+    margin-top: 20px;
+}
+
+.about .value-item {
+    text-align: center;
+}
+
+.about .value-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px auto; /* Center icon and add bottom margin */
+    font-size: 1.8em;
+}
+
+/* Apply colors based on Bootstrap classes for value icons */
+.about .value-icon.bg-primary {
+    background-color: var(--primary-blue) !important;
+}
+
+.about .value-icon.bg-secondary {
+    background-color: var(--secondary-teal) !important; /* Using teal for secondary */
+}
+
+.about .value-item h4 {
+    color: var(--text-dark); /* Value item headings in dark gray */
+    margin-bottom: 5px;
+}
+
+.about .value-item p {
+    color: var(--text-dark); /* Value item text in dark gray */
+    font-size: 0.9em;
+}
+
+
+/* --- Contact Section Styling --- */
+.contact-form {
+    max-width: 600px; /* Limit form width */
+    margin: 0 auto; /* Center the form */
+    background-color: var(--white); /* White background for the form area */
+    border: 1px solid var(--gray-border); /* Subtle gray border */
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.contact-form h2 {
+    color: var(--primary-blue); /* Contact heading in primary blue */
+}
+
+.contact-form .form-control {
+    border-color: var(--gray-border); /* Gray border for form inputs */
+    padding: 10px;
+    margin-bottom: 15px; /* Space between form elements */
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--secondary-teal); /* Teal border on focus */
+    box-shadow: 0 0 0 0.25rem rgba(26, 188, 156, 0.25); /* Teal focus shadow */
+}
+
+/* Style for the Bootstrap primary button in the contact form */
+.contact-form .btn-primary {
+    background-color: var(--accent-orange); /* Accent orange button */
+    border-color: var(--accent-orange);
+    padding: 10px 20px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: var(--accent-orange-dark); /* Darker orange on hover */
+    border-color: var(--accent-orange-dark);
+}
+
+
+/* --- Footer Styling --- */
+footer {
+    background-color: var(--primary-blue); /* Footer background in primary blue */
+    color: var(--white); /* White text in footer */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px; /* Space above the footer */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments (Basic) --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2em; /* Smaller heading on small screens */
+    }
+
+    .hero-content p {
+        font-size: 1em; /* Smaller text on small screens */
+    }
+
+    .services .service-card,
+    .about .story-card,
+    .about .values-card {
+        margin-bottom: 20px; /* Reduce margin on small screens */
+    }
+}
+
